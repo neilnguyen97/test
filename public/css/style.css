@@ -1,0 +1,318 @@
+html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none; /* không có gạch dưới */
+}
+
+h1 {
+    padding: 10px;
+}
+h1, h2, h3, h4 {
+    margin: 0 0 1rem 0;
+}
+/* test để xem cấu trúc như nào */
+.border {
+    border: solid 1px #000;    
+}
+
+.box {
+    width: 500px;
+    height: 300px;
+    border: solid 1px #000;
+    margin:50px auto auto auto;
+    padding: 20px 10px 5px 50px;
+    background-color: #ddd;
+    font-size: 2rem;
+    /*border-radius: 50px 0;*/
+    /*color gradient */
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+   /* box-shadow: ;*/
+}
+
+.box h2 {
+    font-size: 4rem;
+    border: solid 1px #000;
+    color: red;
+}
+
+.box h2:hover {
+
+    color: white;
+    cursor: pointer;
+}
+
+.box2{
+    font-size: 2rem;
+    border: solid 1px #000;
+}
+.box2 h2 {
+    font-size: 1rem;
+}
+.box2 h3 {
+    font-size: 2em;
+}
+.box3 {
+    font-size: 2.5rem;
+    border: solid 1px #000;
+}
+.box3 h2 {
+    font-size: 1rem;
+}
+
+.box3 h3 {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.box4{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    gap: 1rem;
+    align-items: center;
+}
+.box5{
+    height: 400px;
+    text-align: center;
+}
+
+.box5 div div {
+    background-color: red;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: yellow;
+}
+
+.box5_1{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+.box5_2{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.exem1 {
+    font-size: 1rem;
+    margin: auto;
+    max-width: 80%;
+    margin-bottom: 5em;
+}
+
+.exam1_title {
+    font-size: 3.4em;
+    text-align: center;
+}
+
+.box6{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box6-item {
+    min-width: 15%;
+    height: 3rem;
+}
+
+.exam2 {
+    height: 400px;
+    position: relative;
+}
+
+.exam2-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.exam3 {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    border-radius: 1rem;
+    gap: 2rem;
+}
+
+.exam3-imgs {
+    width: 50%;
+    position: relative;
+    border-radius: 1rem;
+    max-width: 80%;
+    font-size: 1rem;
+}
+
+.exam3-imgs img{
+    position: absolute;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.exam3-imgs_category {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.exam3-imgs_category > a {
+    font-size: 1.2em;
+}
+
+.exam3-imgs_time {
+    position: absolute;
+    background-color: white;
+    right: 1rem;
+    top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+}
+
+.exam3_content {
+    width: 50%;
+}
+
+.exam4 {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*auto */
+    gap: 2rem;
+}
+
+.exam4-imgs_thumb{
+    position: relative;
+    /*overflow: hidden; /* trường hợp hình chèn ra ngoài thì ẩn đi */
+
+}
+
+/* liên quan layout shift với lazyloading */
+.exam4-imgs_thumb::before{ /* tạo vị trí cho nó */
+    content: "";
+    display: table;
+    box-sizing: border-box;
+    padding-bottom: 56.25%; /*thay vì 16:9 thì chia tỷ lệ */
+}
+
+.exam4-imgs_thumb::after{ /* kẻ các đường dẫn */
+    content: ""; /* tắt này sẽ không hiện */
+    position: absolute;
+    top: 50%;
+    right: -1em;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10em;
+    background-color: #000;
+    border-radius: 50%;
+    /* background-color: #fff; */
+}
+
+.exam4-imgs_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 2em;
+}
+
+.exam4-imgs_img_link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.exam4-imgs_category{
+    position: absolute;
+    top:2em;
+    left:2em;
+    padding:0.5em 1em;
+    border-radius:1em;
+    background-color: #ffffff;
+}
+
+.exam4-imgs_category > span {
+    font-size: 1.3em;
+    font-weight: 700px;
+}
+
+.exam4-imgs_time{
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    background-color: rgba(0,0,0,0.3);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    color: #fff;
+    display: none;
+    transition: 2s;
+}
+
+.exam4-imgs_thumb:hover > .exam4-imgs_time{
+    display:block;
+}
+
+.exam4-imgs_time >i, .exam4-imgs_time > span{
+    font-size: 1.2em
+}
+
+/* .exam4-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} về nhà làm */
+.exam4-content-meta {
+    margin-bottom: 1.5em;
+}
+.exam4-content-meta > a {
+    font-size: 1.4em;
+    color: rgb(0, 0, 255);
+}
+
+.exam4-content-meta > span {
+    font-size: 1.4em;
+    color: #616161;
+}
+
+.exam4-content-title {
+    font-size: 2em;
+}
+
+.exam4-content_title:hover {
+    color: #616161;
+}
+
+.exam4-content_description{
+    font-size: 1.3em;
+    color: #616161;
+}
+
+#exam4-content_more {
+    font-size: 1.6em;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    color: #fff;
+    background: #200eeb;
+    background: linear-gradient(0deg, rgba(32, 14, 235, 1) 0%, rgba(83, 237, 232, 1) 100%);
+    margin-top: 2em;
+}
+
+.exam4-content_description + #exam4-content_more {
+    margin-bottom: 2em;
+}
